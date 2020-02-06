@@ -69,4 +69,15 @@ Page {
         y: 344
         text: qsTr("Se connecter")
     }
+
+    Text {
+        id: element2
+        x: 120
+        y: 17
+        width: 362
+        height: 49
+        text: qsTr("Connexion")
+        horizontalAlignment: Text.AlignHCenter
+        font.pixelSize: 43
+    }
 }
