@@ -67,6 +67,6 @@ Page {
         id: button
         x: 426
         y: 344
-        text: qsTr("Button")
+        text: qsTr("Se connecter")
     }
 }
