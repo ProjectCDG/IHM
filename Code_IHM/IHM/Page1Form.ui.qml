@@ -80,4 +80,11 @@ Page {
         horizontalAlignment: Text.AlignHCenter
         font.pixelSize: 43
     }
+
+    RoundButton {
+        id: quitter
+        x: 52
+        y: 344
+        text: "+"
+    }
 }

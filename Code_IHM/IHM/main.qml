@@ -19,7 +19,7 @@ ApplicationWindow {
         }
     }
 
-    footer: TabBar {
+   /* footer: TabBar {
         id: tabBar
         currentIndex: swipeView.currentIndex
 
@@ -29,5 +29,5 @@ ApplicationWindow {
         TabButton {
             text: qsTr("Page 2")
         }
-    }
+    }*/
 }
