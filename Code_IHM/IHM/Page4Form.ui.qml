@@ -26,4 +26,10 @@ Page {
         text: qsTr("Suivant")
     }
 
+    Dial {
+        id: dial
+        x: 229
+        y: 117
+    }
+
 }
