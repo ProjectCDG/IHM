@@ -19,6 +19,9 @@ ApplicationWindow {
         }
     }
 
+
+
+
    /* footer: TabBar {
         id: tabBar
         currentIndex: swipeView.currentIndex

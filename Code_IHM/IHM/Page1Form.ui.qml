@@ -64,7 +64,7 @@ Page {
     }
 
     Button {
-        id: button
+        id: connection
         x: 426
         y: 344
         text: qsTr("Se connecter")
@@ -79,12 +79,5 @@ Page {
         text: qsTr("Connexion")
         horizontalAlignment: Text.AlignHCenter
         font.pixelSize: 43
-    }
-
-    RoundButton {
-        id: quitter
-        x: 52
-        y: 344
-        text: "+"
     }
 }
