@@ -16,6 +16,7 @@ ApplicationWindow {
         }
 
         Page2Form {
+            suivantP3.onClicked: { swipeView.isNextItem }
 
         }
         Page3Form {
