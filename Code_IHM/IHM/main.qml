@@ -16,6 +16,10 @@ ApplicationWindow {
         }
 
         Page2Form {
+
+        }
+        Page3Form {
+
         }
     }
 

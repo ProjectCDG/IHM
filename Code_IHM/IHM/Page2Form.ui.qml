@@ -22,4 +22,10 @@ Page {
         text: qsTr("Suivant")
     }
 
+    ComboBox {
+        id: deroulpiece
+        x: 230
+        y: 153
+    }
+
 }
