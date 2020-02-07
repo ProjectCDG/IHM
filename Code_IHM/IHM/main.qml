@@ -16,7 +16,7 @@ ApplicationWindow {
         }
 
         Page2Form {
-            suivantP3.onClicked: { swipeView.isNextItem }
+            suivantP3.onClicked: { swipeView.currentIndex }
 
         }
         Page3Form {
@@ -28,7 +28,7 @@ ApplicationWindow {
 
 
 
-   /* footer: TabBar {
+    footer: TabBar {
         id: tabBar
         currentIndex: swipeView.currentIndex
 
@@ -38,5 +38,5 @@ ApplicationWindow {
         TabButton {
             text: qsTr("Page 2")
         }
-    }*/
+    }
 }
