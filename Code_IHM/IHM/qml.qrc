@@ -5,5 +5,9 @@
         <file>Page2Form.ui.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>Page3Form.ui.qml</file>
+<<<<<<< HEAD
+=======
+        <file>Page4Form.ui.qml</file>
+>>>>>>> 4f6bed6623c06606fb25c9ee69ef8fc5f39a3e64
     </qresource>
 </RCC>
