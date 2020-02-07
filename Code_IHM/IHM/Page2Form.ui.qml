@@ -20,12 +20,16 @@ Page {
         x: 482
         y: 349
         text: qsTr("Suivant")
+        onClicked: swipeView.right
+
     }
 
     ComboBox {
         id: deroulpiece
         x: 230
         y: 153
+        model : ["Oue", "Ah Gars", "Hijo"]
+
     }
 
 }
