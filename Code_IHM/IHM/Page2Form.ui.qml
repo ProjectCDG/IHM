@@ -4,6 +4,7 @@ import QtQuick.Controls 2.5
 Page {
     width: 600
     height: 400
+    property alias suivantP3: suivantP3
 
     Text {
         id: element
@@ -16,11 +17,11 @@ Page {
     }
 
     Button {
-        id: button
+        id: suivantP3
         x: 482
         y: 349
         text: qsTr("Suivant")
-        onClicked: swipeView.right
+
 
     }
 
