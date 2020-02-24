@@ -8,7 +8,7 @@ Page {
     Text {
         id: element
         x: 171
-        y: 80
+        y: 43
         width: 259
         height: 43
         text: qsTr("Parametre réseau")
@@ -26,10 +26,58 @@ Page {
         text: qsTr("Suivant")
     }
 
-    Dial {
-        id: dial
-        x: 229
-        y: 117
+    Frame {
+        id: frameidentif
+        x: 164
+        y: 120
+        width: 287
+        height: 40
     }
 
+    TextInput {
+        id: identif
+        x: 164
+        y: 120
+        width: 287
+        height: 40
+        font.pixelSize: 25
+        maximumLength: 16
+    }
+
+    Text {
+        id: element1
+        x: 89
+        y: 133
+        width: 111
+        height: 14
+        text: qsTr("server name")
+        font.pixelSize: 12
+    }
+
+    Text {
+        id: element2
+        x: 89
+        y: 204
+        width: 111
+        height: 14
+        text: qsTr("user name")
+        font.pixelSize: 12
+    }
+
+    TextInput {
+        id: identif1
+        x: 164
+        y: 191
+        width: 287
+        height: 40
+        maximumLength: 16
+        font.pixelSize: 25
+    }
+
+    Button {
+        id: button1
+        x: 258
+        y: 276
+        text: qsTr("login")
+    }
 }
