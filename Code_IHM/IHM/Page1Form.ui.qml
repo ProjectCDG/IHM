@@ -4,6 +4,7 @@ import QtQuick.Controls 2.5
 Page {
     width: 600
     height: 400
+    property alias connection: connection
 
     Frame {
         id: frameidentif
@@ -67,12 +68,10 @@ Page {
         x: 426
         y: 344
         text: qsTr("Se connecter")
-        MouseArea {
-            anchors.fill: parent
-            onClicked: pageLoader.source = "Page2Form.ui.qml"
 
 
-        }
+
+
     }
 
     Text {
