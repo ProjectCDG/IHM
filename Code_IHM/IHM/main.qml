@@ -7,18 +7,30 @@ ApplicationWindow {
     height: 480
     title: qsTr("IHM Mesurer une piece")
 
-    SwipeView {
-        id: swipeView
-        anchors.fill: parent
-        currentIndex: tabBar.currentIndex
 
-        Page1Form {
-            connection.onClicked: { swipeView.currentIndex }
 
-        }
+    Item {
+        id : page2
+        Loader { id: pageLoader }
 
         Page2Form {
-            suivantP3.onClicked: { swipeView.currentIndex }
+        }
+    }
+
+    Item {
+        id: page1
+
+        Page1Form {
+
+
+        }
+    }
+
+
+
+
+
+    /*      Page2Form {
 
         }
         Page3Form {
@@ -26,14 +38,14 @@ ApplicationWindow {
         }
         Page4Form {
 
-        }
-
-    }
+        }*/
 
 
 
 
-    footer: TabBar {
+
+
+    /* footer: TabBar {
         id: tabBar
         currentIndex: swipeView.currentIndex
 
@@ -46,6 +58,9 @@ ApplicationWindow {
         TabButton {
             text: qsTr("Page 3")
         }
+        TabButton {
+            text: qsTr("Page 4")
+        }
 
-    }
+    }*/
 }

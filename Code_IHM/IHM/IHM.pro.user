@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.10.1, 2020-02-07T11:55:43. -->
-=======
-<!-- Written by QtCreator 4.10.1, 2020-02-24T14:16:17. -->
->>>>>>> fcf514359a0458fb375602f9897953ef40af43fa
+<!-- Written by QtCreator 4.10.1, 2020-02-24T15:11:54. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -321,7 +317,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/SNIR/Documents/Ihm/Code_IHM/build-IHM-Desktop_Qt_5_13_2_MinGW_64_bit-Debug</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/SNIR/Documents/GitHub/IHM/Code_IHM/build-IHM-Desktop_Qt_5_13_2_MinGW_64_bit-Debug</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
