@@ -13,6 +13,8 @@ ApplicationWindow {
         currentIndex: tabBar.currentIndex
 
         Page1Form {
+            connection.onClicked: { swipeView.currentIndex }
+
         }
 
         Page2Form {
