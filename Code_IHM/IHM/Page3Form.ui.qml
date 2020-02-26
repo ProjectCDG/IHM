@@ -4,6 +4,7 @@ import QtQuick.Controls 2.5
 Page {
     width: 600
     height: 400
+    property alias suivantP4: suivantP4
 
     Text {
         id: element
@@ -16,7 +17,7 @@ Page {
     }
 
     Button {
-        id: button
+        id: suivantP4
         x: 482
         y: 349
         text: qsTr("Suivant")
