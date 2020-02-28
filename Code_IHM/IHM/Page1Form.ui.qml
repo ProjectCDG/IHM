@@ -4,8 +4,9 @@ import QtQuick.Controls 2.5
 Page {
     width: 600
     height: 400
+    property alias connexion: connexion
     property alias identif: identif
-    property alias connection: connection
+    property alias connection: connexion
 
     Frame {
         id: frameidentif
@@ -65,14 +66,10 @@ Page {
     }
 
     Button {
-        id: connection
+        id: connexion
         x: 426
         y: 344
         text: qsTr("Se connecter")
-
-
-
-
     }
 
     Text {
