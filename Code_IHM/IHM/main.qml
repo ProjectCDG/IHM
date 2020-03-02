@@ -12,29 +12,37 @@ ApplicationWindow {
     property var page2
     property var page3
     property var page4
-
+    property var xtemp: 0
+    property var ytemp: 0
+    property var ztemp: 0
 
 
     Page4Form {
 
 
         axeYPlus.onClicked: {
-
+            yposition.text = ytemp+1;
+            ytemp= ytemp+1;
         }
         axeYMoins.onClicked: {
-
+            yposition.text = ytemp-1;
+            ytemp= ytemp-1;
         }
         axeXPlus.onClicked: {
-
+            xposition.text = xtemp+1;
+            xtemp= xtemp+1;
         }
         axeXMoins.onClicked: {
-
+            xposition.text = xtemp-1;
+            xtemp= xtemp-1;
         }
         axeZPlus.onClicked: {
-
+            zposition.text = ztemp+1;
+            ztemp= ztemp+1;
         }
         axeZMoins.onClicked: {
-
+            zposition.text = ztemp-1;
+            ztemp= ztemp-1;
         }
         tarVide.onClicked: {
             console.log("Affichage panneau de deplacement plateau");
@@ -57,7 +65,7 @@ ApplicationWindow {
     }
 
 
-/*
+    /*
     Page3Form {
         suivantP4.onClicked: {
             console.log("test");

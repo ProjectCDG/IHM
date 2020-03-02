@@ -4,6 +4,9 @@ import QtQuick.Controls 2.5
 Page {
     width: 600
     height: 400
+    property alias xposition: xposition
+    property alias yposition: yposition
+    property alias zposition: zposition
     property alias textPas: textPas
     property alias pas: pas
     property alias tarVide: tarVide
@@ -148,5 +151,59 @@ Page {
         horizontalAlignment: Text.AlignHCenter
         font.pixelSize: 18
         opacity: 0
+    }
+
+    Text {
+        id: xfixtext
+        x: 482
+        y: 42
+        width: 29
+        height: 21
+        text: qsTr("x :")
+        font.pixelSize: 12
+    }
+
+    Text {
+        id: yfixtext
+        x: 482
+        y: 72
+        width: 29
+        height: 21
+        text: qsTr("y :")
+        font.pixelSize: 12
+    }
+
+    Text {
+        id: zfixtext
+        x: 482
+        y: 99
+        width: 29
+        height: 20
+        text: qsTr("z :")
+        font.pixelSize: 12
+    }
+
+    Label  {
+        id: xposition
+        x: 517
+        y: 43
+        text: qsTr("0")
+        font.pixelSize: 12
+    }
+
+    Label {
+        id: yposition
+        x: 517
+        y: 71
+        text: qsTr("0")
+        font.pixelSize: 12
+    }
+
+    Label {
+        id: zposition
+        x: 517
+        y: 99
+        text: qsTr("0")
+        font.pixelSize: 12
     }
 }
