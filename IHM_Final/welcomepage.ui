@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(25, 25, 25)</string>
+  </property>
   <widget class="QLabel" name="labTitre">
    <property name="geometry">
     <rect>
@@ -29,6 +32,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
    <property name="text">
     <string>Choisir une pièce</string>
    </property>
@@ -41,6 +47,10 @@
      <width>75</width>
      <height>23</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color : white;
+background-color:rgb(48, 48, 48)</string>
    </property>
    <property name="text">
     <string>Deconnexion</string>
@@ -60,6 +70,10 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color : white;
+background-color:rgb(48, 48, 48)</string>
+   </property>
   </widget>
   <widget class="QPushButton" name="butSuivant">
    <property name="geometry">
@@ -69,6 +83,10 @@
      <width>80</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color : white;
+background-color:rgb(48, 48, 48)</string>
    </property>
    <property name="text">
     <string>Suivant</string>

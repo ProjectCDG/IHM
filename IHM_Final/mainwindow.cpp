@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
 //    login->setObjectName("login");
     ui->mainStack->addWidget(&login);
     ui->mainStack->addWidget(&calibrer);
-    ui->mainStack->setCurrentWidget(&login);
+    ui->mainStack->setCurrentWidget(&login);   //Page d'ouverture !!
     connect(&login,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));
     connect(&welcome,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));
 

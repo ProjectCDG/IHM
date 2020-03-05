@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(25, 25, 25)</string>
+  </property>
   <widget class="QPushButton" name="okButton">
    <property name="geometry">
     <rect>
@@ -21,6 +24,10 @@
      <width>75</width>
      <height>23</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color : white;
+background-color:rgb(48, 48, 48)</string>
    </property>
    <property name="text">
     <string>Valider</string>
@@ -39,6 +46,11 @@
     <font>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(48, 48, 48);
+color: white;
+</string>
    </property>
    <property name="text">
     <string/>
@@ -63,6 +75,11 @@
     <font>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(48, 48, 48);
+color: white;
+</string>
    </property>
    <property name="text">
     <string/>
@@ -90,6 +107,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
    <property name="text">
     <string>Connexion</string>
    </property>
@@ -110,6 +130,9 @@
      <bold>false</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
    <property name="text">
     <string>Identifiant </string>
    </property>
@@ -129,6 +152,9 @@
      <weight>50</weight>
      <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color : white;</string>
    </property>
    <property name="text">
     <string>Mot de passe</string>
