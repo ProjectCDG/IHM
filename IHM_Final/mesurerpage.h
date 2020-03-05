@@ -11,12 +11,22 @@ class mesurerpage : public QDialog
 {
     Q_OBJECT
 
+
+
 public:
     explicit mesurerpage(QWidget *parent = nullptr);
     ~mesurerpage();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_butMesure_clicked();
+
+    void on_butSuivant_clicked();
+
+    void on_butDeco_clicked();
+
+signals:
+    void changePage(QString value);
+
 
 private:
     Ui::mesurerpage *ui;

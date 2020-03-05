@@ -7,6 +7,7 @@
 #include "loginpage.h"
 #include "calibrerpage.h"
 #include "mesurerpage.h"
+#include "sauvegarderpage.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -30,6 +31,7 @@ private:
     loginPage login;
     calibrerpage calibrer;
     mesurerpage mesurer;
+    sauvegarderpage sauvegarder;
 
 };
 #endif // MAINWINDOW_H

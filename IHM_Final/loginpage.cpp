@@ -24,8 +24,8 @@ void loginPage::on_okButton_clicked()
     }
     else {
         QMessageBox msgBox;
-        msgBox.setText("Retry.");
-        msgBox.exec();
+        msgBox.critical(this, "Erreur", "<FONT COLOR='#ffffff'>Mauvaise combinaison !</FONT>", "Ok");
+        //msgBox.exec();
     }
 
 }

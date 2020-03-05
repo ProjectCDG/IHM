@@ -21,6 +21,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     mesurerpage.cpp \
+    sauvegarderpage.cpp \
     welcomepage.cpp
 
 HEADERS += \
@@ -28,6 +29,7 @@ HEADERS += \
     loginpage.h \
     mainwindow.h \
     mesurerpage.h \
+    sauvegarderpage.h \
     welcomepage.h
 
 FORMS += \
@@ -35,6 +37,7 @@ FORMS += \
     loginpage.ui \
     mainwindow.ui \
     mesurerpage.ui \
+    sauvegarderpage.ui \
     welcomepage.ui
 
 # Default rules for deployment.
