@@ -28,6 +28,13 @@ private slots:
 
     void on_butZMoin_clicked();
 
+    void on_butDeco_clicked();
+
+    void on_butSuivant_clicked();
+
+signals:
+   void changePage(QString value);
+
 private:
     Ui::calibrerpage *ui;
     int YTemp = 0;

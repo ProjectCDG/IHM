@@ -6,6 +6,7 @@
 #include "welcomepage.h"
 #include "loginpage.h"
 #include "calibrerpage.h"
+#include "mesurerpage.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,6 +29,7 @@ private:
     welcomePage welcome; //composition
     loginPage login;
     calibrerpage calibrer;
+    mesurerpage mesurer;
 
 };
 #endif // MAINWINDOW_H

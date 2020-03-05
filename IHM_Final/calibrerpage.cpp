@@ -1,5 +1,6 @@
 #include "calibrerpage.h"
 #include "ui_calibrerpage.h"
+#include <QMessageBox>
 
 calibrerpage::calibrerpage(QWidget *parent) :
     QDialog(parent),
@@ -48,4 +49,17 @@ void calibrerpage::on_butZMoin_clicked()
 {
     ZTemp= ZTemp-1;
     ui->zLcd->display(ZTemp);
+}
+
+void calibrerpage::on_butDeco_clicked()
+{
+    QMessageBox msgBox;
+    msgBox.setText("Deconnexion !");
+    msgBox.exec();
+    emit changePage("login");
+}
+
+void calibrerpage::on_butSuivant_clicked()
+{
+    emit changePage("mesurer");
 }

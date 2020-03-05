@@ -10,28 +10,32 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-//    stack = ui->mainStack;
-//    ui->centralwidget = stack;
-//    stack->show();
+    //    stack = ui->mainStack;
+    //    ui->centralwidget = stack;
+    //    stack->show();
+    setWindowIcon(QIcon("icone.jpg"));
+    setWindowTitle("Mesurer le centre de gravité");
 
 
+    //    welcome = new welcomePage(this);
+    //    welcome->setObjectName("welcome");
+    //    login = new loginPage(this); // inutile
+    //    login->setObjectName("login");
 
-//    welcome = new welcomePage(this);
-//    welcome->setObjectName("welcome");
     ui->mainStack->addWidget(&welcome);
-//    login = new loginPage(this); // inutile
-//    login->setObjectName("login");
     ui->mainStack->addWidget(&login);
     ui->mainStack->addWidget(&calibrer);
+    ui->mainStack->addWidget(&mesurer);
     ui->mainStack->setCurrentWidget(&login);   //Page d'ouverture !!
     connect(&login,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));
     connect(&welcome,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));
+    connect(&calibrer,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));
 
-                // emeteur                                  // recepteur
+    // emeteur                                  // recepteur
 }
 
 void MainWindow::changePage(QString value){
-    qDebug() << "Slot change page";
+    qDebug() << "Changement de page";
     if(value == "welcome"){
         ui->mainStack->setCurrentWidget(&welcome);
     }
@@ -40,6 +44,9 @@ void MainWindow::changePage(QString value){
     }
     else if(value == "calibrer"){
         ui->mainStack->setCurrentWidget(&calibrer);
+    }
+    else if(value == "mesurer"){
+        ui->mainStack->setCurrentWidget(&mesurer);
     }
 
 }

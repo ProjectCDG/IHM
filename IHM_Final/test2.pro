@@ -20,18 +20,21 @@ SOURCES += \
     loginpage.cpp \
     main.cpp \
     mainwindow.cpp \
+    mesurerpage.cpp \
     welcomepage.cpp
 
 HEADERS += \
     calibrerpage.h \
     loginpage.h \
     mainwindow.h \
+    mesurerpage.h \
     welcomepage.h
 
 FORMS += \
     calibrerpage.ui \
     loginpage.ui \
     mainwindow.ui \
+    mesurerpage.ui \
     welcomepage.ui
 
 # Default rules for deployment.
