@@ -376,10 +376,10 @@ background-color:rgb(48, 48, 48)</string>
   <widget class="QPushButton" name="butSuivant">
    <property name="geometry">
     <rect>
-     <x>690</x>
+     <x>700</x>
      <y>360</y>
      <width>80</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <property name="styleSheet">
