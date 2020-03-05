@@ -1,22 +1,18 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "loginpage.h"
+#include <QLabel>
 #include <QStackedWidget>
+#include <QDebug>
 
 mainWindow::mainWindow(QWidget *parent) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::mainWindow)
 {
     ui->setupUi(this);
+    ui->mainStack->addWidget(&welcome);
 
 
-   /* login = new loginPage();
-    QStackedWidget *stackPage = new QStackedWidget;
-    stackPage->addWidget(login);
-    stackPage->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    stackPage->setCurrentIndex(0);
-    stackPage->adjustSize();
-*/
 
 }
 
@@ -26,8 +22,8 @@ mainWindow::~mainWindow()
     delete ui;
 }
 
-void mainWindow::changerDePage(int index)
+void mainWindow::changerDePage(QString value)
 {
-stackPage->setCurrentIndex(index);
+
 }
 
