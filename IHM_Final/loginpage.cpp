@@ -9,6 +9,7 @@ loginPage::loginPage(QWidget *parent) :
     ui->setupUi(this);
     ui->userName->setText("");
     ui->password->setText("");
+    ui->labLogo->setPixmap(QPixmap("logo.svg"));
 }
 
 loginPage::~loginPage()

@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     //    stack = ui->mainStack;
     //    ui->centralwidget = stack;
     //    stack->show();
-    setWindowIcon(QIcon("icone.jpg"));
+    setWindowIcon(QIcon("logoblack.svg"));
     setWindowTitle("Mesurer le centre de gravité");
 
 

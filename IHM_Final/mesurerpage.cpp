@@ -14,6 +14,7 @@ mesurerpage::mesurerpage(QWidget *parent) :
     ui->xLcd->hide();
     ui->yLcd->hide();
     ui->zLcd->hide();
+    ui->labLogo->setPixmap(QPixmap("logo.svg"));
 }
 
 mesurerpage::~mesurerpage()

@@ -160,6 +160,19 @@ color: white;
     <string>Mot de passe</string>
    </property>
   </widget>
+  <widget class="QLabel" name="labLogo">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>105</y>
+     <width>200</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

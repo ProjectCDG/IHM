@@ -11,6 +11,7 @@ welcomePage::welcomePage(QWidget *parent) :
     ui->deroulPiece->addItem("Test");
     ui->deroulPiece->addItem("Oui");
     ui->deroulPiece->addItem("bverub");
+    ui->labLogo->setPixmap(QPixmap("logo.svg"));
 }
 
 welcomePage::~welcomePage()

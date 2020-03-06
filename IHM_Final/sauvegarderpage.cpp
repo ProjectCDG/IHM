@@ -7,6 +7,7 @@ sauvegarderpage::sauvegarderpage(QWidget *parent) :
     ui(new Ui::sauvegarderpage)
 {
     ui->setupUi(this);
+    ui->labLogo->setPixmap(QPixmap("logo.svg"));
 }
 
 sauvegarderpage::~sauvegarderpage()
