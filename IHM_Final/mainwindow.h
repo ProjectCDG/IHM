@@ -24,6 +24,7 @@ public:
 public slots:
     void changePage(QString value);
 
+
 private:
     Ui::MainWindow *ui;
     QStackedWidget *stack;

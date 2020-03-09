@@ -42,6 +42,7 @@ void MainWindow::changePage(QString value){
         ui->mainStack->setCurrentWidget(&welcome);
     }
     else if(value == "login"){
+
         ui->mainStack->setCurrentWidget(&login);
     }
     else if(value == "calibrer"){

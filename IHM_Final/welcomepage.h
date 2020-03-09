@@ -2,6 +2,7 @@
 #define WELCOMEPAGE_H
 
 #include <QDialog>
+#include "loginpage.h"
 
 namespace Ui {
 class welcomePage;
@@ -17,11 +18,10 @@ public:
 
 private slots:
     void on_butDeco_clicked();
-
     void on_butSuivant_clicked();
 
 signals:
-   void changePage(QString value);
+    void changePage(QString value);
 
 private:
     Ui::welcomePage *ui;

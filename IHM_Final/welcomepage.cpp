@@ -1,6 +1,7 @@
 #include "welcomepage.h"
 #include "ui_welcomepage.h"
 #include <QMessageBox>
+#include "ui_loginpage.h"
 
 welcomePage::welcomePage(QWidget *parent) :
     QDialog(parent),
@@ -22,8 +23,7 @@ welcomePage::~welcomePage()
 void welcomePage::on_butDeco_clicked()
 {
     QMessageBox msgBox;
-    msgBox.setText("Deconnexion !");
-    msgBox.exec();
+    msgBox.critical(this, "Deconnexion", "<FONT COLOR='#ffffff'>Deconnexion</FONT>", "Ok");
     emit changePage("login");
 
 }

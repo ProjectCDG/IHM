@@ -24,6 +24,7 @@ mesurerpage::~mesurerpage()
 
 void mesurerpage::on_butMesure_clicked()
 {
+    ui->labGif->show();
     QMovie *movie = new QMovie("giphy.gif");
     ui->labGif->setMovie(movie);
     movie->start();
@@ -57,6 +58,7 @@ void mesurerpage::centreDeGravite()
 
 void mesurerpage::on_butSuivant_clicked()
 {
+    reset();
     emit changePage("sauvegarder");
 }
 
@@ -66,8 +68,22 @@ void mesurerpage::on_butDeco_clicked()
    int decoVerif = msgBox.critical(this, "Avertissement", "<FONT COLOR='#ffffff'>Êtes vous sur de vouloir vous deconnecter ? Vous risquer de perdre votre mesure</FONT>", "Oui","Non");
     if (decoVerif == msgBox.result())
     {
+        reset();
         emit changePage("login");
     }
 
+
+}
+
+void mesurerpage::reset()
+{
+    ui->labX->hide();
+    ui->labY->hide();
+    ui->labZ->hide();
+    ui->xLcd->hide();
+    ui->yLcd->hide();
+    ui->zLcd->hide();
+    ui->labGif->hide();
+    ui->butMesure->setEnabled(true);
 
 }

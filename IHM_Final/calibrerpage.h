@@ -53,6 +53,7 @@ private:
     int XTemp = 0;
     int ZTemp = 0;
     int pas = 1;
+    void reset();
 };
 
 #endif // CALIBRERPAGE_H

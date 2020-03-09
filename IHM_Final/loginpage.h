@@ -23,6 +23,7 @@ private slots:
 
 private:
     Ui::loginPage *ui;
+
 };
 
 #endif // LOGINPAGE_H

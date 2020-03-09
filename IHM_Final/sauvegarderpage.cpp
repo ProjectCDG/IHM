@@ -28,6 +28,7 @@ void sauvegarderpage::on_butSave_clicked()
     else
     {
         msgBox.information(this, "Succés", "<FONT COLOR='#ffffff'>Votre pièce a été sauvegarder au nom de : " + piece + "</FONT>");
+        ui->nomPiece->setText("");
         emit changePage("login");
     }
 }
@@ -43,6 +44,7 @@ void sauvegarderpage::on_butDeco_clicked()
    int decoVerif = msgBox.critical(this, "Avertissement", "<FONT COLOR='#ffffff'>Êtes vous sur de vouloir vous deconnecter ? Vous risquer de perdre votre mesure</FONT>", "Oui","Non");
     if (decoVerif == msgBox.result())
     {
+        ui->nomPiece->setText("");
         emit changePage("login");
     }
 }

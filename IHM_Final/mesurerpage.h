@@ -27,8 +27,8 @@ private slots:
 signals:
     void changePage(QString value);
 
-
 private:
+    void reset();
     Ui::mesurerpage *ui;
 
 
