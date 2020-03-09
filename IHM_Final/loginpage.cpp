@@ -28,7 +28,14 @@ void loginPage::on_okButton_clicked()
     else {
         QMessageBox msgBox;
         msgBox.critical(this, "Erreur", "<FONT COLOR='#ffffff'>Mauvaise combinaison !</FONT>", "Ok");
-        //msgBox.exec();
+        ui->password->setText("");
     }
 
+}
+
+void loginPage::on_butParam_clicked()
+{
+    ui->userName->setText("");
+    ui->password->setText("");
+    emit changePage("parametre");
 }

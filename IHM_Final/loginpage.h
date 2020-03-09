@@ -17,6 +17,7 @@ public:
 
 private slots:
     void on_okButton_clicked();
+    void on_butParam_clicked();
 
  signals:
     void changePage(QString value);

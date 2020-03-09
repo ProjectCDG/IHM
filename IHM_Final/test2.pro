@@ -21,6 +21,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     mesurerpage.cpp \
+    parametrepage.cpp \
     sauvegarderpage.cpp \
     welcomepage.cpp
 
@@ -29,6 +30,7 @@ HEADERS += \
     loginpage.h \
     mainwindow.h \
     mesurerpage.h \
+    parametrepage.h \
     sauvegarderpage.h \
     welcomepage.h
 
@@ -37,6 +39,7 @@ FORMS += \
     loginpage.ui \
     mainwindow.ui \
     mesurerpage.ui \
+    parametrepage.ui \
     sauvegarderpage.ui \
     welcomepage.ui
 

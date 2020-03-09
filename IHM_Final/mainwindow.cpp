@@ -27,12 +27,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->mainStack->addWidget(&calibrer);
     ui->mainStack->addWidget(&mesurer);
     ui->mainStack->addWidget(&sauvegarder);
+    ui->mainStack->addWidget(&parametre);
     ui->mainStack->setCurrentWidget(&login);   //Page d'ouverture !!
     connect(&login,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));
     connect(&welcome,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));
     connect(&calibrer,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));
     connect(&mesurer,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));
     connect(&sauvegarder,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));
+    connect(&parametre,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));
     // emeteur                                  // recepteur
 }
 
@@ -53,6 +55,9 @@ void MainWindow::changePage(QString value){
     }
     else if(value == "sauvegarder"){
         ui->mainStack->setCurrentWidget(&sauvegarder);
+    }
+    else if(value == "parametre"){
+        ui->mainStack->setCurrentWidget(&parametre);
     }
 
 }

@@ -8,6 +8,7 @@
 #include "calibrerpage.h"
 #include "mesurerpage.h"
 #include "sauvegarderpage.h"
+#include "parametrepage.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,6 +34,7 @@ private:
     calibrerpage calibrer;
     mesurerpage mesurer;
     sauvegarderpage sauvegarder;
+    parametrepage parametre;
 
 };
 #endif // MAINWINDOW_H

@@ -11,8 +11,6 @@ class mesurerpage : public QDialog
 {
     Q_OBJECT
 
-
-
 public:
     explicit mesurerpage(QWidget *parent = nullptr);
     ~mesurerpage();
