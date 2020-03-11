@@ -26,6 +26,7 @@ private slots:
     void on_rbutIpMan_clicked();
     void on_butValide_clicked();
     void on_butAnnule_clicked();
+    void getParamAuto();
 };
 
 #endif // PARAMETREPAGE_H

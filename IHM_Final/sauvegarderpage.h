@@ -28,6 +28,7 @@ signals:
 private:
     Ui::sauvegarderpage *ui;
     QString piece;
+
 };
 
 #endif // SAUVEGARDERPAGE_H

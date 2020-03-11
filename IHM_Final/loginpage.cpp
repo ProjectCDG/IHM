@@ -3,6 +3,8 @@
 #include <QMessageBox>
 #include "welcomepage.h"
 
+
+
 loginPage::loginPage(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::loginPage)

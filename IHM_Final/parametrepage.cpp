@@ -1,6 +1,9 @@
 #include "parametrepage.h"
 #include "ui_parametrepage.h"
 #include <QMessageBox>
+#include <QtNetwork/QHostAddress>
+#include <QtNetwork/QHostInfo>
+#include <QtNetwork/QNetworkInterface>
 
 parametrepage::parametrepage(QWidget *parent) :
     QDialog(parent),
@@ -17,6 +20,7 @@ parametrepage::parametrepage(QWidget *parent) :
     ui->labAddIp->setStyleSheet("color: gray");
     ui->labPass2->setStyleSheet("color: gray");
     ui->labMasque->setStyleSheet("color: gray");
+    getParamAuto();
 }
 
 parametrepage::~parametrepage()
@@ -36,6 +40,7 @@ void parametrepage::on_rbutIpAuto_clicked()
     ui->labAddIp->setStyleSheet("color: gray");
     ui->labPass2->setStyleSheet("color: gray");
     ui->labMasque->setStyleSheet("color: gray");
+    getParamAuto();
 
 }
 
@@ -77,4 +82,33 @@ void parametrepage::on_butAnnule_clicked()
         emit changePage("login");
     }
 
+}
+
+void parametrepage::getParamAuto()
+{
+    QString localhostname =  QHostInfo::localHostName();
+    QString localhostIP;
+    QList<QHostAddress> hostList = QHostInfo::fromName(localhostname).addresses();
+    foreach (const QHostAddress& address, hostList) {
+        if (address.protocol() == QAbstractSocket::IPv4Protocol && address.isLoopback() == false) {
+            localhostIP = address.toString();
+        }
+    }
+    QString localMacAddress;
+    QString localNetmask;
+    foreach (const QNetworkInterface& networkInterface, QNetworkInterface::allInterfaces()) {
+        foreach (const QNetworkAddressEntry& entry, networkInterface.addressEntries()) {
+            if (entry.ip().toString() == localhostIP) {
+                localMacAddress = networkInterface.hardwareAddress();
+                localNetmask = entry.netmask().toString();
+                break;
+            }
+        }
+    }
+    qDebug() << "Localhost name: " << localhostname;
+    qDebug() << "IP = " << localhostIP;
+    qDebug() << "MAC = " << localMacAddress;
+    qDebug() << "Netmask = " << localNetmask;
+    ui->masque->setText(localNetmask);
+    ui->ip->setText(localhostIP);
 }
