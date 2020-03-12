@@ -20,19 +20,19 @@ fenetre::~fenetre()
 
 void fenetre::on_butSql_clicked()
 {
-    QSqlDatabase base = QSqlDatabase::addDatabase("QMYSQL", "BDD1");
-    base.setHostName("localhost");
+    QSqlDatabase base = QSqlDatabase::addDatabase("QODBC");
+    base.setHostName("127.0.0.1");
     base.setUserName("root");
     base.setPassword("");
     base.setDatabaseName("projet_local");
-    base.setPort(3306);
+    base.setPort(3308);
     bool etat_co = base.open();
     if (etat_co== true){
-        QMessageBox::information(this, "Connexion", "La connexion à la base de données est réussie.");
+        QMessageBox::information(this, "Connexion réussie", "La connexion à la base de données est réussie.");
         ui->co_bdd->setText("Connexion valide");
     }
     else {
-        QMessageBox::critical(this, "Connexion", "La connexion à la base de données est un échec.");
+        QMessageBox::critical(this, "Connexion échouée", base.lastError().text());
         ui->co_bdd->setText("Connexion non valide");
     }
 }

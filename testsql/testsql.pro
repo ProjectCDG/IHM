@@ -26,7 +26,7 @@ HEADERS += \
 FORMS += \
     fenetre.ui
 
-LIBS += -LC:\wamp64\bin\mysql\mysql8.0.18\lib -llibmysql
+LIBS += -LC:\Qt\Qt5.13.2\5.13.2\mingw73_64\bin -llibmysql
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

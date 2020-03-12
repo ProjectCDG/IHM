@@ -2,6 +2,9 @@
 #define FENETRE_H
 
 #include <QDialog>
+#include <QtSql>
+#include <QSqlDatabase>
+
 
 namespace Ui {
 class fenetre;
@@ -21,6 +24,7 @@ private slots:
 
 private:
     Ui::fenetre *ui;
+    QSqlDatabase base;
 };
 
 #endif // FENETRE_H
