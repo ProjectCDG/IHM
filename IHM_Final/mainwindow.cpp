@@ -9,19 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    //    stack = ui->mainStack;
-    //    ui->centralwidget = stack;
-    //    stack->show();
     setWindowIcon(QIcon("logoblack.svg"));
     setWindowTitle("Mesurer le centre de gravité");
-
-
-    //    welcome = new welcomePage(this);
-    //    welcome->setObjectName("welcome");
-    //    login = new loginPage(this); // inutile
-    //    login->setObjectName("login");
-
     ui->mainStack->addWidget(&welcome);
     ui->mainStack->addWidget(&login);
     ui->mainStack->addWidget(&calibrer);
@@ -68,6 +57,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
 
 
 

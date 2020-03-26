@@ -163,10 +163,10 @@ color: white;
   <widget class="QLabel" name="labLogo">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>105</y>
-     <width>200</width>
-     <height>200</height>
+     <x>10</x>
+     <y>10</y>
+     <width>51</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">

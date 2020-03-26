@@ -1,6 +1,7 @@
 #include "sauvegarderpage.h"
 #include "ui_sauvegarderpage.h"
 #include <QMessageBox>
+#include <QtDebug>
 
 sauvegarderpage::sauvegarderpage(QWidget *parent) :
     QDialog(parent),
@@ -8,6 +9,15 @@ sauvegarderpage::sauvegarderpage(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->labLogo->setPixmap(QPixmap("logo.svg"));
+
+    ui->xLcd->hide();
+    ui->yLcd->hide();
+    ui->zLcd->hide();
+    ui->label_2->hide();
+    ui->label_3->hide();
+    ui->labX->hide();
+    ui->labY->hide();
+    ui->labZ->hide();
 }
 
 sauvegarderpage::~sauvegarderpage()
@@ -41,10 +51,34 @@ void sauvegarderpage::on_nomPiece_textEdited(const QString &arg1)
 void sauvegarderpage::on_butDeco_clicked()
 {
     QMessageBox msgBox;
-   int decoVerif = msgBox.critical(this, "Avertissement", "<FONT COLOR='#ffffff'>Êtes vous sur de vouloir vous deconnecter ? Vous risquer de perdre votre mesure</FONT>", "Oui","Non");
+    int decoVerif = msgBox.critical(this, "Avertissement", "<FONT COLOR='#ffffff'>Êtes vous sur de vouloir vous deconnecter ? Vous risquer de perdre votre mesure</FONT>", "Oui","Non");
     if (decoVerif == msgBox.result())
     {
         ui->nomPiece->setText("");
         emit changePage("login");
     }
+}
+
+
+
+void sauvegarderpage::on_affichValeur_clicked()
+{
+    ui->xLcd->show();
+    ui->yLcd->show();
+    ui->zLcd->show();
+    ui->label_2->show();
+    ui->label_3->show();
+    ui->labX->show();
+    ui->labY->show();
+    ui->labZ->show();
+
+    mesurerpage mesurer;
+    int x; int y; int z;
+    x = mesurer.envoieCoordX();
+    y = mesurer.envoieCoordY();
+    z = mesurer.envoieCoordZ();
+    ui->xLcd->display(x);
+    ui->yLcd->display(y);
+    ui->zLcd->display(z);
+
 }

@@ -2,6 +2,7 @@
 #define PARAMETREPAGE_H
 
 #include <QDialog>
+#include "mesurerpage.h"
 
 namespace Ui {
 class parametrepage;
@@ -18,8 +19,10 @@ public:
 private:
     Ui::parametrepage *ui;
 
+
 signals:
     void changePage(QString value);
+
 
 private slots:
     void on_rbutIpAuto_clicked();

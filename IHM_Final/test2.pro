@@ -1,5 +1,6 @@
 QT       += core gui \
-widgets network
+widgets network \
+serialport
 DEPENDPATH += .
 INCLUDEPATH += .
 

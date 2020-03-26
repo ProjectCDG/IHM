@@ -14,6 +14,9 @@ class mesurerpage : public QDialog
 public:
     explicit mesurerpage(QWidget *parent = nullptr);
     ~mesurerpage();
+    int envoieCoordX();
+    int envoieCoordY();
+    int envoieCoordZ();
 
 private slots:
     void on_butMesure_clicked();
@@ -22,12 +25,15 @@ private slots:
 
     void on_butDeco_clicked();
 
+
 signals:
     void changePage(QString value);
+
 
 private:
     void reset();
     Ui::mesurerpage *ui;
+
 
 
     void centreDeGravite();

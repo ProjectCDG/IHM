@@ -3,6 +3,7 @@
 #include <QLabel>
 #include <QMovie>
 #include <QMessageBox>
+#include <QDebug>
 mesurerpage::mesurerpage(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::mesurerpage)
@@ -25,7 +26,7 @@ mesurerpage::~mesurerpage()
 void mesurerpage::on_butMesure_clicked()
 {
     ui->labGif->show();
-    QMovie *movie = new QMovie("giphy.gif");
+    QMovie *movie = new QMovie("gif.gif");
     ui->labGif->setMovie(movie);
     movie->start();
     ui->labX->show();
@@ -40,18 +41,7 @@ void mesurerpage::on_butMesure_clicked()
 }
 void mesurerpage::centreDeGravite()
 {
-    /*int test = 0;
-    while(test != 1)
-    {
-        ui->xLcd->display(3);
-        ui->yLcd->display(-2);
-        ui->zLcd->display(13);
-        if(ui->xLcd->value() != 3 && ui->yLcd->value() != -2 && ui->zLcd->value() !=13 )
-        {
-            test = 1;
-        }
 
-    }*/
 
 
 }
@@ -86,4 +76,23 @@ void mesurerpage::reset()
     ui->labGif->hide();
     ui->butMesure->setEnabled(true);
 
+}
+
+
+int mesurerpage::envoieCoordX()
+{
+    qDebug() << "Load x coord";
+    return 1;
+}
+
+int mesurerpage::envoieCoordY()
+{
+    qDebug() << "Load y coord";
+    return 1;
+}
+
+int mesurerpage::envoieCoordZ()
+{
+    qDebug() << "Load z coord";
+    return 2;
 }

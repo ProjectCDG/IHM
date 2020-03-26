@@ -69,7 +69,7 @@ background-color:rgb(48, 48, 48)</string>
      <x>320</x>
      <y>210</y>
      <width>151</width>
-     <height>131</height>
+     <height>151</height>
     </rect>
    </property>
    <property name="text">
@@ -218,10 +218,10 @@ background-color:rgb(48, 48, 48)</string>
   <widget class="QLabel" name="labLogo">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>200</width>
-     <height>200</height>
+     <x>10</x>
+     <y>10</y>
+     <width>51</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">

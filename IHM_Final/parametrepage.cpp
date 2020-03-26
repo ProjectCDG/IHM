@@ -86,6 +86,7 @@ void parametrepage::on_butAnnule_clicked()
 
 void parametrepage::getParamAuto()
 {
+    // Sous Windows.
     QString localhostname =  QHostInfo::localHostName();
     QString localhostIP;
     QList<QHostAddress> hostList = QHostInfo::fromName(localhostname).addresses();

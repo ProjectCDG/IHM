@@ -2,7 +2,7 @@
 #define SAUVEGARDERPAGE_H
 
 #include <QDialog>
-
+#include "mesurerpage.h"
 namespace Ui {
 class sauvegarderpage;
 }
@@ -22,13 +22,16 @@ private slots:
 
     void on_butDeco_clicked();
 
+    void on_affichValeur_clicked();
+
+
 signals:
     void changePage(QString value);
+
 
 private:
     Ui::sauvegarderpage *ui;
     QString piece;
-
 };
 
 #endif // SAUVEGARDERPAGE_H

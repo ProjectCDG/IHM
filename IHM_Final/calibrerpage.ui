@@ -393,9 +393,9 @@ background-color:rgb(48, 48, 48)</string>
   <widget class="QPushButton" name="butValidPalpeur">
    <property name="geometry">
     <rect>
-     <x>305</x>
+     <x>295</x>
      <y>280</y>
-     <width>171</width>
+     <width>191</width>
      <height>31</height>
     </rect>
    </property>
@@ -480,9 +480,9 @@ background-color:rgb(48, 48, 48)</string>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>595</x>
+     <x>585</x>
      <y>280</y>
-     <width>121</width>
+     <width>141</width>
      <height>20</height>
     </rect>
    </property>
@@ -503,10 +503,10 @@ background-color:rgb(48, 48, 48)</string>
   <widget class="QLabel" name="labLogo">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>200</width>
-     <height>200</height>
+     <x>10</x>
+     <y>10</y>
+     <width>51</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">

@@ -2,6 +2,7 @@
 #define CALIBRERPAGE_H
 
 #include <QDialog>
+#include <QSerialPort>
 
 namespace Ui {
 class calibrerpage;
@@ -54,6 +55,7 @@ private:
     int ZTemp = 0;
     int pas = 1;
     void reset();
+    QSerialPort *serial = new QSerialPort(this);
 };
 
 #endif // CALIBRERPAGE_H

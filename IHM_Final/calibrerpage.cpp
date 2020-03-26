@@ -2,6 +2,8 @@
 #include "ui_calibrerpage.h"
 #include "ui_loginpage.h"
 #include <QMessageBox>
+#include <QSerialPort>
+#include <QDebug>
 
 calibrerpage::calibrerpage(QWidget *parent) :
     QDialog(parent),
@@ -13,6 +15,8 @@ calibrerpage::calibrerpage(QWidget *parent) :
     ui->butSuivant->hide();
     ui->pasLcd->display(1);
     ui->labLogo->setPixmap(QPixmap("logo.svg"));
+
+
 
 }
 
@@ -26,12 +30,30 @@ void calibrerpage::on_butYPlus_clicked()
     YTemp= YTemp+pas;
     ui->yLcd->display(YTemp);
 
+
+    serial->setPortName("COM1");
+    serial->setBaudRate(QSerialPort::Baud9600);
+    serial->setDataBits(QSerialPort::Data8);
+    serial->setParity(QSerialPort::NoParity);
+    serial->setStopBits(QSerialPort::OneStop);
+    serial->setFlowControl(QSerialPort::NoFlowControl);
+
+    if (serial->open(QIODevice::ReadWrite))
+    {
+        qDebug() << "OUEEEEE";     //Connected
+        serial->write("Oueeee");
+    }
+    else
+    {
+      qDebug() << "non"; //Open error
+    }
 }
 
 void calibrerpage::on_butYMoin_clicked()
 {
     YTemp= YTemp-pas;
     ui->yLcd->display(YTemp);
+    serial->close();
 }
 
 void calibrerpage::on_butXPlus_clicked()
