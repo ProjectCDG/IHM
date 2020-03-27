@@ -22,6 +22,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    Ui::MainWindow * getMainUi();
+
 
 public slots:
     void changePage(QString value);

@@ -1,8 +1,7 @@
 #ifndef SAUVEGARDERPAGE_H
 #define SAUVEGARDERPAGE_H
-
 #include <QDialog>
-#include "mesurerpage.h"
+
 namespace Ui {
 class sauvegarderpage;
 }
@@ -14,6 +13,7 @@ class sauvegarderpage : public QDialog
 public:
     explicit sauvegarderpage(QWidget *parent = nullptr);
     ~sauvegarderpage();
+
 
 private slots:
     void on_butSave_clicked();

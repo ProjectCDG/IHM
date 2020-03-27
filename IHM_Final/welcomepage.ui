@@ -59,7 +59,7 @@ background-color:rgb(48, 48, 48)</string>
   <widget class="QComboBox" name="deroulPiece">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>280</x>
      <y>160</y>
      <width>251</width>
      <height>31</height>
@@ -103,6 +103,23 @@ background-color:rgb(48, 48, 48)</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="butSyncBdd">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>360</y>
+     <width>201</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color : white;
+background-color:rgb(48, 48, 48)</string>
+   </property>
+   <property name="text">
+    <string>Synchronisation base de donnée</string>
    </property>
   </widget>
  </widget>

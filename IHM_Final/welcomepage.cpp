@@ -2,6 +2,9 @@
 #include "ui_welcomepage.h"
 #include <QMessageBox>
 #include "ui_loginpage.h"
+#include <QFile>
+#include <QDebug>
+
 
 welcomePage::welcomePage(QWidget *parent) :
     QDialog(parent),
@@ -31,4 +34,46 @@ void welcomePage::on_butDeco_clicked()
 void welcomePage::on_butSuivant_clicked()
 {
     emit changePage("calibrer");
+}
+
+void welcomePage::on_butSyncBdd_clicked()
+{/*
+    QString fichier = "C:/Users/frederic/Documents/monfichier.txt";
+    QFile file(fichier); // Appel du constructeur de la classe QFile
+    if (file.open(QIODevice::Text | QIODevice::ReadOnly))
+    {
+    file.readAll();
+    QTextStream in(&fichier);
+       while (!in.atEnd())
+       {
+          QString line = in.readLine();
+          ui->deroulPiece->addItem(line);
+       }
+
+    }*/
+    QFile file("C:/Users/frederic/Documents/monfichier.txt");
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+
+        while (!file.atEnd()) {
+            QByteArray line = file.readLine();
+            qDebug() << line;
+            const char preLettre[] = "N";
+            const char deuLettre[] = "o";
+            const char slashLettre[] = "*";   //18
+            if (line[0] == preLettre[0] && line[1] == deuLettre[0])
+            {
+                for(int i = 0; i<1; i++)
+                {
+                    while(line[i] != slashLettre[0])
+                    {
+
+                    }
+
+                }
+            }
+        }
+
+
+    qDebug() << "Syncro";
 }

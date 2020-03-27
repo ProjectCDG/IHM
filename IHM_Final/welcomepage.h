@@ -20,6 +20,8 @@ private slots:
     void on_butDeco_clicked();
     void on_butSuivant_clicked();
 
+    void on_butSyncBdd_clicked();
+
 signals:
     void changePage(QString value);
 
