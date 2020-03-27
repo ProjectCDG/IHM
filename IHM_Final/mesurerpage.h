@@ -33,10 +33,13 @@ signals:
 private:
     void reset();
     Ui::mesurerpage *ui;
-
-
-
     void centreDeGravite();
+    int x;
+    int y;
+    int z;
+    int TabCoord[3];
+
+
 };
 
 #endif // MESURERPAGE_H

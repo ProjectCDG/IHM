@@ -4,6 +4,7 @@
 #include <QMovie>
 #include <QMessageBox>
 #include <QDebug>
+#include <time.h>
 mesurerpage::mesurerpage(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::mesurerpage)
@@ -16,6 +17,7 @@ mesurerpage::mesurerpage(QWidget *parent) :
     ui->yLcd->hide();
     ui->zLcd->hide();
     ui->labLogo->setPixmap(QPixmap("logo.svg"));
+    srand(time(NULL));
 }
 
 mesurerpage::~mesurerpage()
@@ -41,8 +43,12 @@ void mesurerpage::on_butMesure_clicked()
 }
 void mesurerpage::centreDeGravite()
 {
-
-
+    x = rand()%1000;
+    y = rand()%1000;
+    z = rand()%1000;
+    ui->xLcd->display(x);
+    ui->yLcd->display(y);
+    ui->zLcd->display(z);
 
 }
 
@@ -82,17 +88,17 @@ void mesurerpage::reset()
 int mesurerpage::envoieCoordX()
 {
     qDebug() << "Load x coord";
-    return 1;
+    return x;
 }
 
 int mesurerpage::envoieCoordY()
 {
     qDebug() << "Load y coord";
-    return 1;
+    return y;
 }
 
 int mesurerpage::envoieCoordZ()
 {
     qDebug() << "Load z coord";
-    return 2;
+    return z;
 }

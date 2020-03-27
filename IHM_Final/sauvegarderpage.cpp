@@ -2,6 +2,7 @@
 #include "ui_sauvegarderpage.h"
 #include <QMessageBox>
 #include <QtDebug>
+#include <QFile>
 
 sauvegarderpage::sauvegarderpage(QWidget *parent) :
     QDialog(parent),
@@ -18,6 +19,7 @@ sauvegarderpage::sauvegarderpage(QWidget *parent) :
     ui->labX->hide();
     ui->labY->hide();
     ui->labZ->hide();
+    ui->butSave->setEnabled(false);
 }
 
 sauvegarderpage::~sauvegarderpage()
@@ -38,7 +40,32 @@ void sauvegarderpage::on_butSave_clicked()
     else
     {
         msgBox.information(this, "Succés", "<FONT COLOR='#ffffff'>Votre pièce a été sauvegarder au nom de : " + piece + "</FONT>");
-        ui->nomPiece->setText("");
+        ui->nomPiece->setText("");       
+        ui->xLcd->hide();
+        ui->yLcd->hide();
+        ui->zLcd->hide();
+        ui->label_2->hide();
+        ui->label_3->hide();
+        ui->labX->hide();
+        ui->labY->hide();
+        ui->labZ->hide();
+        QString xString = QString::number(x);
+        QString yString = QString::number(y);
+        QString zString = QString::number(z);
+
+        QString fichier = "C:/Users/frederic/Documents/monfichier.txt";
+        QFile file(fichier); // Appel du constructeur de la classe QFile
+        if (file.open(QIODevice::Text | QIODevice::ReadWrite))
+        {
+        file.readAll();
+        file.write("Nom de la pièce : " + piece.toUtf8() + "\n");
+        file.write("Coord x: " + xString.toUtf8() + "\n");
+        file.write("Coord y: " + yString.toUtf8() + "\n");
+        file.write("Coord z: " + zString.toUtf8() + "\n" + "    \n");
+        file.close();
+        }
+
+
         emit changePage("login");
     }
 }
@@ -54,6 +81,14 @@ void sauvegarderpage::on_butDeco_clicked()
     int decoVerif = msgBox.critical(this, "Avertissement", "<FONT COLOR='#ffffff'>Êtes vous sur de vouloir vous deconnecter ? Vous risquer de perdre votre mesure</FONT>", "Oui","Non");
     if (decoVerif == msgBox.result())
     {
+        ui->xLcd->hide();
+        ui->yLcd->hide();
+        ui->zLcd->hide();
+        ui->label_2->hide();
+        ui->label_3->hide();
+        ui->labX->hide();
+        ui->labY->hide();
+        ui->labZ->hide();
         ui->nomPiece->setText("");
         emit changePage("login");
     }
@@ -71,12 +106,15 @@ void sauvegarderpage::on_affichValeur_clicked()
     ui->labX->show();
     ui->labY->show();
     ui->labZ->show();
-
+    ui->butSave->setEnabled(true);
     mesurerpage mesurer;
-    int x; int y; int z;
-    x = mesurer.envoieCoordX();
-    y = mesurer.envoieCoordY();
-    z = mesurer.envoieCoordZ();
+
+  //  x = mesurer.envoieCoordX();
+  //  y = mesurer.envoieCoordY();
+  //  z = mesurer.envoieCoordZ();
+    x = -887;
+    y = 450;
+    z = -574;
     ui->xLcd->display(x);
     ui->yLcd->display(y);
     ui->zLcd->display(z);
