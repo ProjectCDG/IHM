@@ -2,6 +2,7 @@
 #define SAUVEGARDERPAGE_H
 #include <QDialog>
 
+
 namespace Ui {
 class sauvegarderpage;
 }
@@ -33,6 +34,7 @@ private:
     Ui::sauvegarderpage *ui;
     QString piece;
     int x; int y; int z;
+
 };
 
 #endif // SAUVEGARDERPAGE_H

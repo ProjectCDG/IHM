@@ -122,6 +122,41 @@ background-color:rgb(48, 48, 48)</string>
     <string>Synchronisation base de donnée</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="butValPiece">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>239</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color : white;
+background-color:rgb(48, 48, 48)</string>
+   </property>
+   <property name="text">
+    <string>Valider la pièce</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labPiece">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>300</y>
+     <width>54</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

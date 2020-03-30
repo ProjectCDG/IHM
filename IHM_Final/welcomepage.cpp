@@ -16,6 +16,8 @@ welcomePage::welcomePage(QWidget *parent) :
     ui->deroulPiece->addItem("Oui");
     ui->deroulPiece->addItem("bverub");
     ui->labLogo->setPixmap(QPixmap("logo.svg"));
+    ui->labPiece->hide();
+    ui->butSuivant->setEnabled(false);
 }
 
 welcomePage::~welcomePage()
@@ -27,12 +29,14 @@ void welcomePage::on_butDeco_clicked()
 {
     QMessageBox msgBox;
     msgBox.critical(this, "Deconnexion", "<FONT COLOR='#ffffff'>Deconnexion</FONT>", "Ok");
+    ui->butSuivant->setEnabled(false);
     emit changePage("login");
 
 }
 
 void welcomePage::on_butSuivant_clicked()
 {
+    ui->butSuivant->setEnabled(false);
     emit changePage("calibrer");
 }
 
@@ -52,28 +56,36 @@ void welcomePage::on_butSyncBdd_clicked()
 
     }*/
     QFile file("C:/Users/frederic/Documents/monfichier.txt");
-        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-            return;
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+    while (!file.atEnd()) {
+        QByteArray line = file.readLine();
+        //qDebug() << line;
+        const char preLettre[] = "N";
+        const char deuLettre[] = "o";
+        const char slashLettre[] = "*";   //18
+        char nomPiece[20];
+        if (line[0] == preLettre[0] && line[1] == deuLettre[0])
+        {
 
-        while (!file.atEnd()) {
-            QByteArray line = file.readLine();
-            qDebug() << line;
-            const char preLettre[] = "N";
-            const char deuLettre[] = "o";
-            const char slashLettre[] = "*";   //18
-            if (line[0] == preLettre[0] && line[1] == deuLettre[0])
-            {
-                for(int i = 0; i<1; i++)
-                {
-                    while(line[i] != slashLettre[0])
-                    {
-
-                    }
-
-                }
-            }
         }
 
 
-    qDebug() << "Syncro";
+        qDebug() << "Syncro";
+    }
+}
+
+
+
+QString welcomePage::getPiece()
+{
+    return nomPiece;
+}
+
+
+void welcomePage::on_butValPiece_clicked()
+{
+    ui->labPiece->setText(ui->deroulPiece->currentText());
+    nomPiece = ui->labPiece->text();
+    ui->butSuivant->setEnabled(true);
 }

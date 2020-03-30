@@ -15,12 +15,16 @@ class welcomePage : public QDialog
 public:
     explicit welcomePage(QWidget *parent = nullptr);
     ~welcomePage();
+    QString getPiece();
+    QString nomPiece;
 
 private slots:
     void on_butDeco_clicked();
     void on_butSuivant_clicked();
 
     void on_butSyncBdd_clicked();
+
+    void on_butValPiece_clicked();
 
 signals:
     void changePage(QString value);

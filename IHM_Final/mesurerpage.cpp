@@ -18,6 +18,7 @@ mesurerpage::mesurerpage(QWidget *parent) :
     ui->zLcd->hide();
     ui->labLogo->setPixmap(QPixmap("logo.svg"));
     srand(time(NULL));
+    ui->butSuivant->setEnabled(false);
 }
 
 mesurerpage::~mesurerpage()
@@ -39,6 +40,7 @@ void mesurerpage::on_butMesure_clicked()
     ui->zLcd->show();
     ui->butMesure->setEnabled(false);
     centreDeGravite();
+    ui->butSuivant->setEnabled(true);
 
 }
 void mesurerpage::centreDeGravite()
@@ -81,6 +83,7 @@ void mesurerpage::reset()
     ui->zLcd->hide();
     ui->labGif->hide();
     ui->butMesure->setEnabled(true);
+    ui->butSuivant->setEnabled(false);
 
 }
 

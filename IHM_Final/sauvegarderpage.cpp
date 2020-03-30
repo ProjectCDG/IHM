@@ -13,7 +13,6 @@ sauvegarderpage::sauvegarderpage(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->labLogo->setPixmap(QPixmap("logo.svg"));
-
     ui->xLcd->hide();
     ui->yLcd->hide();
     ui->zLcd->hide();
@@ -22,7 +21,10 @@ sauvegarderpage::sauvegarderpage(QWidget *parent) :
     ui->labX->hide();
     ui->labY->hide();
     ui->labZ->hide();
+    ui->labNomPiece->hide();
+    ui->labPiece->hide();
     ui->butSave->setEnabled(false);
+
 
 }
 
@@ -35,44 +37,37 @@ void sauvegarderpage::on_butSave_clicked()
 {
     QMessageBox msgBox;
 
-    if(ui->nomPiece->text() == "")
+    msgBox.information(this, "Succés", "<FONT COLOR='#ffffff'>Votre pièce a été sauvegarder au nom de : " + piece + "</FONT>");
+    ui->xLcd->hide();
+    ui->yLcd->hide();
+    ui->zLcd->hide();
+    ui->label_2->hide();
+    ui->label_3->hide();
+    ui->labX->hide();
+    ui->labY->hide();
+    ui->labZ->hide();
+    ui->labNomPiece->hide();
+    ui->labPiece->hide();
+
+    QString xString = QString::number(x);
+    QString yString = QString::number(y);
+    QString zString = QString::number(z);
+
+    QString fichier = "C:/Users/frederic/Documents/monfichier.txt";
+    QFile file(fichier); // Appel du constructeur de la classe QFile
+    if (file.open(QIODevice::Text | QIODevice::ReadWrite))
     {
-
-        msgBox.critical(this, "Erreur", "<FONT COLOR='#ffffff'>Veuillez renseignez un nom pour la pièce</FONT>");
-        // msgBox.exec();
+        file.readAll();
+        file.write("Nom de la piece : " + piece.toUtf8() + "\n");
+        file.write("Coord x: " + xString.toUtf8() + "\n");
+        file.write("Coord y: " + yString.toUtf8() + "\n");
+        file.write("Coord z: " + zString.toUtf8() + "\n" + "    \n");
+        file.close();
     }
-    else
-    {
-        msgBox.information(this, "Succés", "<FONT COLOR='#ffffff'>Votre pièce a été sauvegarder au nom de : " + piece + "</FONT>");
-        ui->nomPiece->setText("");
-        ui->xLcd->hide();
-        ui->yLcd->hide();
-        ui->zLcd->hide();
-        ui->label_2->hide();
-        ui->label_3->hide();
-        ui->labX->hide();
-        ui->labY->hide();
-        ui->labZ->hide();
 
-        QString xString = QString::number(x);
-        QString yString = QString::number(y);
-        QString zString = QString::number(z);
+    ui->butSave->setEnabled(false);
+    emit changePage("login");
 
-        QString fichier = "C:/Users/frederic/Documents/monfichier.txt";
-        QFile file(fichier); // Appel du constructeur de la classe QFile
-        if (file.open(QIODevice::Text | QIODevice::ReadWrite))
-        {
-            file.readAll();
-            file.write("Nom de la piece : " + piece.toUtf8() + "\n");
-            file.write("Coord x: " + xString.toUtf8() + "\n");
-            file.write("Coord y: " + yString.toUtf8() + "\n");
-            file.write("Coord z: " + zString.toUtf8() + "\n" + "    \n");
-            file.close();
-        }
-
-
-        emit changePage("login");
-    }
 }
 
 void sauvegarderpage::on_nomPiece_textEdited(const QString &arg1)
@@ -94,7 +89,6 @@ void sauvegarderpage::on_butDeco_clicked()
         ui->labX->hide();
         ui->labY->hide();
         ui->labZ->hide();
-        ui->nomPiece->setText("");
         emit changePage("login");
     }
 }
@@ -111,6 +105,8 @@ void sauvegarderpage::on_affichValeur_clicked()
     ui->labX->show();
     ui->labY->show();
     ui->labZ->show();
+    ui->labNomPiece->show();
+    ui->labPiece->show();
     ui->butSave->setEnabled(true);
     extern MainWindow * pw;
     mesurerpage * pMesure = (mesurerpage *)pw->getMainUi()->mainStack->widget(3);
@@ -123,5 +119,9 @@ void sauvegarderpage::on_affichValeur_clicked()
     ui->xLcd->display(x);
     ui->yLcd->display(y);
     ui->zLcd->display(z);
+
+    welcomePage * pWelcome = (welcomePage *)pw->getMainUi()->mainStack->widget(0);
+    piece = pWelcome->getPiece();
+    ui->labNomPiece->setText(piece);
 
 }
