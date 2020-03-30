@@ -34,6 +34,7 @@ private:
     Ui::sauvegarderpage *ui;
     QString piece;
     int x; int y; int z;
+    void baseDeDonne();
 
 };
 

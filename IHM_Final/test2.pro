@@ -1,6 +1,7 @@
 QT       += core gui \
 widgets network \
-serialport
+serialport \
+sql
 DEPENDPATH += .
 INCLUDEPATH += .
 

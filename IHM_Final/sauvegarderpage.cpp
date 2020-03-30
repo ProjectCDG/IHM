@@ -6,6 +6,11 @@
 #include <QStackedWidget>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QtSql>
+#include <QCoreApplication>
+#include <QSqlDatabase>
+
+
 
 sauvegarderpage::sauvegarderpage(QWidget *parent) :
     QDialog(parent),
@@ -123,5 +128,37 @@ void sauvegarderpage::on_affichValeur_clicked()
     welcomePage * pWelcome = (welcomePage *)pw->getMainUi()->mainStack->widget(0);
     piece = pWelcome->getPiece();
     ui->labNomPiece->setText(piece);
+
+
+    baseDeDonne();
+
+
+}
+
+void sauvegarderpage::baseDeDonne()
+{
+
+    QSqlDatabase base = QSqlDatabase::addDatabase("QMYSQL");
+  // On entre l’adresse IP de la base de données
+     base.setHostName("5.9.170.254");
+  // On entre l’identifiant de connexion
+     base.setUserName("pcdg");
+  // On entre le mot de passe
+     base.setPassword("lescouzdu12");
+  // On entre le nom de la base de données à laquelle on veut se connecter
+     base.setDatabaseName("db_cdg");
+  // Ce booléen retourne True si la connexion est faite, False si elle n’est pas opérationnelle
+     bool etat_co = base.open();
+  // Cette boucle teste si la connection est bonne, dans ce cas elle affiche que la connexion a été bien faite, dans le cas contraire elle indique que non avec une erreur.
+     if (etat_co== true){
+         QMessageBox::information(this, "Connexion réussie", "La connexion à la base de données est réussie.");
+         qDebug() << "Ca marche";
+     }
+     else {
+  // base.lastError().text() retourne l’erreur de connexion
+         QMessageBox::critical(this, "Connexion échouée", base.lastError().text());
+         qDebug() << "Ca marche pas";
+     }
+
 
 }
