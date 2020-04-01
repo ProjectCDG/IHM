@@ -5,6 +5,18 @@
 #include <QtNetwork/QHostInfo>
 #include <QtNetwork/QNetworkInterface>
 
+/*
+#include <stdio.h>
+#include <errno.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <net/if.h>
+#include <net/route.h>
+#include <arpa/inet.h>
+*/
 parametrepage::parametrepage(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::parametrepage)
@@ -86,6 +98,7 @@ void parametrepage::on_butAnnule_clicked()
 
 void parametrepage::getParamAuto()
 {
+
     // Sous Windows.
     QString localhostname =  QHostInfo::localHostName();
     QString localhostIP;
@@ -112,4 +125,34 @@ void parametrepage::getParamAuto()
     qDebug() << "Netmask = " << localNetmask;
     ui->masque->setText(localNetmask);
     ui->ip->setText(localhostIP);
+
+
+
+
+    //SUR LINUX
+    /*
+    const QHostAddress &localhost = QHostAddress(QHostAddress::LocalHost);
+        for (const QHostAddress &address: QNetworkInterface::allAddresses()) {
+            if (address.protocol() == QAbstractSocket::IPv4Protocol && address != localhost)
+            {
+                qDebug() << address.toString();
+                ui->ip->setText(address.toString());
+            }
+        }
+
+        int fd;
+        struct ifreq ifr;
+        QString mask;
+        fd = socket(AF_INET, SOCK_DGRAM, 0);
+        /* I want an IPv4 netmask
+        ifr.ifr_addr.sa_family = AF_INET;
+        /* I want netmask attached to "eth0"
+        strncpy(ifr.ifr_name, "eth0", IFNAMSIZ-1);
+        ioctl(fd, SIOCGIFNETMASK, &ifr);
+        /* display result
+        mask = ("%s\n", inet_ntoa(((struct sockaddr_in *)&ifr.ifr_addr)->sin_addr));
+        qDebug() << mask;
+        ui->masque->setText(mask);
+        */
+
 }
