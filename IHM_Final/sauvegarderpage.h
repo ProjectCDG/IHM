@@ -33,6 +33,7 @@ signals:
 private:
     Ui::sauvegarderpage *ui;
     QString piece;
+    QString nomUser;
     int x; int y; int z;
     void baseDeDonne();
 

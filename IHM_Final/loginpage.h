@@ -14,6 +14,7 @@ class loginPage : public QDialog
 public:
     explicit loginPage(QWidget *parent = nullptr);
     ~loginPage();
+    QString getUser();
 
 private slots:
     void on_okButton_clicked();
@@ -24,6 +25,8 @@ private slots:
 
 private:
     Ui::loginPage *ui;
+    QString user;
+    void baseDeDonne();
 
 };
 
