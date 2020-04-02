@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->mainStack->addWidget(&mesurer);
     ui->mainStack->addWidget(&sauvegarder);
     ui->mainStack->addWidget(&parametre);
-    ui->mainStack->setCurrentWidget(&sauvegarder);   //Page d'ouverture !!
+    ui->mainStack->setCurrentWidget(&welcome);   //Page d'ouverture !!
     connect(&login,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));
     connect(&welcome,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));
     connect(&calibrer,SIGNAL(changePage(QString)),this,SLOT(changePage(QString)));

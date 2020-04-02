@@ -9,6 +9,7 @@
 #include <QtSql>
 #include <QCoreApplication>
 #include <QSqlDatabase>
+#include <QSqlError>
 
 
 
@@ -54,11 +55,9 @@ void sauvegarderpage::on_butSave_clicked()
     ui->labNomPiece->hide();
     ui->labPiece->hide();
 
-    QString xString = QString::number(x);
-    QString yString = QString::number(y);
-    QString zString = QString::number(z);
 
-    QString fichier = "C:/Users/frederic/Documents/monfichier.txt";
+
+    /*QString fichier = "C:/Users/frederic/Documents/monfichier.txt";
     QFile file(fichier); // Appel du constructeur de la classe QFile
     if (file.open(QIODevice::Text | QIODevice::ReadWrite))
     {
@@ -69,6 +68,8 @@ void sauvegarderpage::on_butSave_clicked()
         file.write("Coord z: " + zString.toUtf8() + "\n" + "    \n");
         file.close();
     }
+*/
+    baseDeDonne();
 
     ui->butSave->setEnabled(false);
     emit changePage("login");
@@ -130,35 +131,52 @@ void sauvegarderpage::on_affichValeur_clicked()
     ui->labNomPiece->setText(piece);
 
 
-    baseDeDonne();
 
 
 }
 
 void sauvegarderpage::baseDeDonne()
 {
+    QString xString = QString::number(x);
+    QString yString = QString::number(y);
+    QString zString = QString::number(z);
 
     QSqlDatabase base = QSqlDatabase::addDatabase("QMYSQL");
-  // On entre l’adresse IP de la base de données
-     base.setHostName("5.9.170.254");
-  // On entre l’identifiant de connexion
-     base.setUserName("pcdg");
-  // On entre le mot de passe
-     base.setPassword("lescouzdu12");
-  // On entre le nom de la base de données à laquelle on veut se connecter
-     base.setDatabaseName("db_cdg");
-  // Ce booléen retourne True si la connexion est faite, False si elle n’est pas opérationnelle
-     bool etat_co = base.open();
-  // Cette boucle teste si la connection est bonne, dans ce cas elle affiche que la connexion a été bien faite, dans le cas contraire elle indique que non avec une erreur.
-     if (etat_co== true){
-         QMessageBox::information(this, "Connexion réussie", "La connexion à la base de données est réussie.");
-         qDebug() << "Ca marche";
-     }
-     else {
-  // base.lastError().text() retourne l’erreur de connexion
-         QMessageBox::critical(this, "Connexion échouée", base.lastError().text());
-         qDebug() << "Ca marche pas";
-     }
+    // On entre l’adresse IP de la base de données
+    base.setHostName("5.9.170.254");
+    // On entre l’identifiant de connexion
+    base.setUserName("pcdg");
+    // On entre le mot de passe
+    base.setPassword("lescouzdu12");
+    // On entre le nom de la base de données à laquelle on veut se connecter
+    base.setDatabaseName("db_cdg");
+    // Ce booléen retourne True si la connexion est faite, False si elle n’est pas opérationnelle
+    bool etat_co = base.open();
+    // Cette boucle teste si la connection est bonne, dans ce cas elle affiche que la connexion a été bien faite, dans le cas contraire elle indique que non avec une erreur.
+    if (etat_co== true){
+        //QMessageBox::information(this, "Connexion réussie", "La connexion à la base de données est réussie.");
+        qDebug() << "Ca marche la co bdd";
+
+        QSqlQuery envoieMesure;
+        /*envoieMesure.prepare("INSERT INTO mesure (iden_rasperry, iden_piece, cdgmesurer, axe_x, axe_y, axe_z, username, date_mesure) VALUES (?, ?, ?, ?, ?, ?, ?, ?);");
+        envoieMesure.addBindValue(5);
+        envoieMesure.addBindValue('piece');
+        envoieMesure.addBindValue(10);
+        envoieMesure.addBindValue(69);
+        envoieMesure.addBindValue(69);
+        envoieMesure.addBindValue(69);
+        envoieMesure.addBindValue('alex');
+        envoieMesure.addBindValue('2020-03-27 23:23:23');
+        envoieMesure.exec();*/
+        //envoieMesure.exec("INSERT INTO mesure (iden_raspberry, iden_piece, cdgmesurer, axe_x, axe_y, axe_z, username) VALUES ('idenrasperry1', 'piece1', 3, 3, 6, 0, 'jean');");
+        envoieMesure.exec("INSERT INTO mesure (iden_raspberry, iden_piece, cdgmesurer, axe_x, axe_y, axe_z, username) VALUES ('idenrasperry1', '" + piece + "', 0, '" + xString + "', '" + yString + "', '" + zString + "', 'jean');");
+
+    }
+    else {
+        // base.lastError().text() retourne l’erreur de connexion
+        QMessageBox::critical(this, "Connexion échouée", base.lastError().text());
+        qDebug() << "Ca marche pas";
+    }
 
 
 }

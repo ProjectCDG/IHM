@@ -54,7 +54,7 @@ void welcomePage::on_butSyncBdd_clicked()
           ui->deroulPiece->addItem(line);
        }
 
-    }*/
+    }
     QFile file("C:/Users/frederic/Documents/monfichier.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return;
@@ -70,10 +70,10 @@ void welcomePage::on_butSyncBdd_clicked()
 
         }
 
-
+*/
         qDebug() << "Syncro";
     }
-}
+
 
 
 
