@@ -18,6 +18,7 @@ public:
 
 private:
     Ui::parametrepage *ui;
+    QString currentIp;
 
 
 signals:
@@ -30,6 +31,7 @@ private slots:
     void on_butValide_clicked();
     void on_butAnnule_clicked();
     void getParamAuto();
+    void changerParam();
 };
 
 #endif // PARAMETREPAGE_H

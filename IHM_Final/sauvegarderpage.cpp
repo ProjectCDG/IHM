@@ -143,10 +143,10 @@ void sauvegarderpage::baseDeDonne()
     QString zString = QString::number(z);
 
     QSqlDatabase base = QSqlDatabase::addDatabase("QMYSQL");
-    base.setHostName("5.9.170.254");    // On entre l’adresse IP de la base de données
-    base.setUserName("pcdg");           // On entre l’identifiant de connexion
-    base.setPassword("lescouzdu12");    // On entre le mot de passe
-    base.setDatabaseName("db_cdg");     // On entre le nom de la base de données à laquelle on veut se connecter
+    base.setHostName("labatcave.fr");    // On entre l’adresse IP de la base de données
+    base.setUserName("bconstant");           // On entre l’identifiant de connexion
+    base.setPassword("8@Nr1k2e");    // On entre le mot de passe
+    base.setDatabaseName("db_erems");     // On entre le nom de la base de données à laquelle on veut se connecter
     bool etat_co = base.open();         // Ce booléen retourne True si la connexion est faite, False si elle n’est pas opérationnelle
     if (etat_co== true){                // Cette boucle teste si la connection est bonne, dans ce cas elle affiche que la connexion a été bien faite, dans le cas contraire elle indique que non avec une erreur.
         qDebug() << "Ca marche la co bdd";
