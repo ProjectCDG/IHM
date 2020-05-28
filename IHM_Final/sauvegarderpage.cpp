@@ -57,8 +57,7 @@ void sauvegarderpage::on_butSave_clicked()
     ui->labPiece->hide();
 
 
-
-    /*QString fichier = "C:/Users/frederic/Documents/monfichier.txt";
+    QString fichier = "C:/Users/frederic/Documents/monfichier.txt";
     QFile file(fichier); // Appel du constructeur de la classe QFile
     if (file.open(QIODevice::Text | QIODevice::ReadWrite))
     {
@@ -69,8 +68,8 @@ void sauvegarderpage::on_butSave_clicked()
         file.write("Coord z: " + zString.toUtf8() + "\n" + "    \n");
         file.close();
     }
-*/
-    baseDeDonne();
+
+    //baseDeDonne();
 
     ui->butSave->setEnabled(false);
     emit changePage("login");
@@ -123,6 +122,9 @@ void sauvegarderpage::on_affichValeur_clicked()
     ui->xLcd->display(x);
     ui->yLcd->display(y);
     ui->zLcd->display(z);
+    xString = QString::number(x);
+    yString = QString::number(y);
+    zString = QString::number(z);
 
     welcomePage * pWelcome = (welcomePage *)pw->getMainUi()->mainStack->widget(0);
     piece = pWelcome->getPiece();
@@ -138,9 +140,6 @@ void sauvegarderpage::on_affichValeur_clicked()
 
 void sauvegarderpage::baseDeDonne()
 {
-    QString xString = QString::number(x);
-    QString yString = QString::number(y);
-    QString zString = QString::number(z);
 
     QSqlDatabase base = QSqlDatabase::addDatabase("QMYSQL");
     base.setHostName("labatcave.fr");    // On entre l’adresse IP de la base de données

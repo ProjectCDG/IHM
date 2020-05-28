@@ -25,6 +25,7 @@ SOURCES += \
     loginpage.cpp \
     main.cpp \
     mainwindow.cpp \
+    menupage.cpp \
     mesurerpage.cpp \
     parametrepage.cpp \
     sauvegarderpage.cpp \
@@ -34,6 +35,7 @@ HEADERS += \
     calibrerpage.h \
     loginpage.h \
     mainwindow.h \
+    menupage.h \
     mesurerpage.h \
     parametrepage.h \
     sauvegarderpage.h \
@@ -43,6 +45,7 @@ FORMS += \
     calibrerpage.ui \
     loginpage.ui \
     mainwindow.ui \
+    menupage.ui \
     mesurerpage.ui \
     parametrepage.ui \
     sauvegarderpage.ui \

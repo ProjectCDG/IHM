@@ -387,7 +387,7 @@ background-color:rgb(48, 48, 48)</string>
 background-color:rgb(48, 48, 48)</string>
    </property>
    <property name="text">
-    <string>Suivant</string>
+    <string>Valider</string>
    </property>
   </widget>
   <widget class="QPushButton" name="butValidPalpeur">

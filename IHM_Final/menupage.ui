@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>welcomePage</class>
- <widget class="QDialog" name="welcomePage">
+ <class>menupage</class>
+ <widget class="QDialog" name="menupage">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,12 +16,56 @@
   <property name="styleSheet">
    <string notr="true">background-color:rgb(25, 25, 25)</string>
   </property>
+  <widget class="QPushButton" name="butMesurer">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>100</y>
+     <width>241</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>17</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color : white;
+background-color:rgb(48, 48, 48)</string>
+   </property>
+   <property name="text">
+    <string>Mesurer une pièce</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="butCalibrer">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>200</y>
+     <width>241</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>17</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color : white;
+background-color:rgb(48, 48, 48)</string>
+   </property>
+   <property name="text">
+    <string>Calibrer la machine</string>
+   </property>
+  </widget>
   <widget class="QLabel" name="labTitre">
    <property name="geometry">
     <rect>
-     <x>305</x>
+     <x>310</x>
      <y>10</y>
-     <width>211</width>
+     <width>181</width>
      <height>81</height>
     </rect>
    </property>
@@ -36,7 +80,20 @@
     <string notr="true">color: white;</string>
    </property>
    <property name="text">
-    <string>Choisir une pièce</string>
+    <string>Menu principal</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labLogo">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>51</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="butDeco">
@@ -56,105 +113,54 @@ background-color:rgb(48, 48, 48)</string>
     <string>Deconnexion</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="deroulPiece">
+  <widget class="QLabel" name="labHisto">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>160</y>
-     <width>251</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color : white;
-background-color:rgb(48, 48, 48)</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="butSuivant">
-   <property name="geometry">
-    <rect>
-     <x>700</x>
-     <y>360</y>
-     <width>80</width>
-     <height>20</height>
+     <x>50</x>
+     <y>120</y>
+     <width>201</width>
+     <height>265</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color : white;
-background-color:rgb(48, 48, 48)</string>
-   </property>
-   <property name="text">
-    <string>Suivant</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="labLogo">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>51</width>
-     <height>61</height>
-    </rect>
+    <string notr="true">color: white;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="butSyncBdd">
+  <widget class="QPushButton" name="butHisto">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>360</y>
+     <x>50</x>
+     <y>60</y>
      <width>201</width>
      <height>20</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color : white;
+    <string notr="true">   color : white;
 background-color:rgb(48, 48, 48)</string>
    </property>
    <property name="text">
-    <string>Synchronisation base de donnée</string>
+    <string>Afficher l'historique des mesures</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="butValPiece">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>239</y>
-     <width>201</width>
-     <height>31</height>
+     <x>130</x>
+     <y>80</y>
+     <width>36</width>
+     <height>20</height>
     </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>15</pointsize>
-    </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color : white;
+    <string notr="true">color: white;
 background-color:rgb(48, 48, 48)</string>
    </property>
    <property name="text">
-    <string>Valider la pièce</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="labPiece">
-   <property name="geometry">
-    <rect>
-     <x>380</x>
-     <y>300</y>
-     <width>54</width>
-     <height>14</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
+    <string>4 max</string>
    </property>
   </widget>
  </widget>

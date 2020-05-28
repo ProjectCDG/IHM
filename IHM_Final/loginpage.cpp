@@ -24,14 +24,14 @@ loginPage::~loginPage()
 
 void loginPage::on_okButton_clicked()
 {
-    baseDeDonne();
+  //  baseDeDonne();
     //@TODO
     if(ui->userName->text() == "Axel" && ui->password->text() == "password")
     {
         user = ui->userName->text();
         ui->userName->setText("");
         ui->password->setText("");
-       emit changePage("welcome");
+       emit changePage("menu");
     }
     else {
         QMessageBox msgBox;

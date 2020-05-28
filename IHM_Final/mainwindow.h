@@ -9,7 +9,9 @@
 #include "mesurerpage.h"
 #include "sauvegarderpage.h"
 #include "parametrepage.h"
+#include "menupage.h"
 #include <QProgressDialog>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -38,6 +40,7 @@ private:
     mesurerpage mesurer;
     sauvegarderpage sauvegarder;
     parametrepage parametre;
+    menupage menu;
 
 };
 #endif // MAINWINDOW_H

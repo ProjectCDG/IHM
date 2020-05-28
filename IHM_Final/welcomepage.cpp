@@ -37,7 +37,7 @@ void welcomePage::on_butDeco_clicked()
 void welcomePage::on_butSuivant_clicked()
 {
     ui->butSuivant->setEnabled(false);
-    emit changePage("calibrer");
+    emit changePage("mesurer");
 }
 
 void welcomePage::on_butSyncBdd_clicked()

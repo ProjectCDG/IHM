@@ -91,7 +91,7 @@ void calibrerpage::on_butDeco_clicked()
 void calibrerpage::on_butSuivant_clicked()
 {
     reset();
-    emit changePage("mesurer");
+    emit changePage("menu");
 }
 
 void calibrerpage::on_butValidPalpeur_clicked()

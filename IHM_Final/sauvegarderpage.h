@@ -36,6 +36,9 @@ private:
     QString nomUser;
     int x; int y; int z;
     void baseDeDonne();
+    QString xString;
+    QString yString;
+    QString zString;
 
 };
 
