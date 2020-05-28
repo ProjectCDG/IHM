@@ -57,7 +57,7 @@ void sauvegarderpage::on_butSave_clicked()
     ui->labPiece->hide();
 
 
-    QString fichier = "C:/Users/frederic/Documents/monfichier.txt";
+    QString fichier = "/home/pi/Desktop/ici/Ihm-EnDev/monfichier.txt";
     QFile file(fichier); // Appel du constructeur de la classe QFile
     if (file.open(QIODevice::Text | QIODevice::ReadWrite))
     {

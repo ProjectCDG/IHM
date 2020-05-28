@@ -77,3 +77,10 @@ void loginPage::baseDeDonne()
         qDebug() << "Ca marche pas";
     }
 }
+
+void loginPage::on_butReboot_clicked()
+{
+    QMessageBox msgBox;
+    msgBox.information(this, "Succés", "FONT COLOR='#ffffff'>Redemarer l'apareil pour prendre en comptes les modifications.</FONT>");
+    system("shutdown -r 0");
+}

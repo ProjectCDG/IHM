@@ -38,7 +38,7 @@ void menupage::on_butDeco_clicked()
 
 void menupage::on_butHisto_clicked()
 {
-    QString fichier("C:/Users/frederic/Documents/monfichier.txt");
+    QString fichier("/home/pi/Desktop/ici/Ihm-EnDev/monfichier.txt");
     QFile file(fichier); // Appel du constructeur de la classe QFile
     if(!file.open(QIODevice::ReadWrite))
     {
